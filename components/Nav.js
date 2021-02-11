@@ -1,43 +1,27 @@
-import Link from 'next/Link';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
-} from "@chakra-ui/react"
-import { FiShoppingCart } from 'react-icons/fi';
-import navStyles from '../styles/Nav.module.css';
+import Link from "next/Link";
+import { Button, Flex, Spacer } from "@chakra-ui/react";
+import CustomMenu from "./CustomMenu";
+import { FiShoppingCart } from "react-icons/fi";
+import navStyles from "../styles/Nav.module.css";
 
 const Nav = () => {
   return (
-    <div className={navStyles.nav}>
-      <Tabs variant="unstyled">
-        <TabList>
-          <Tab>
-            <Link href='/'>Home</Link>
-          </Tab>
-          <Tab>
-            <Link href='/shop'>Men</Link>
-          </Tab>
-          <Tab>
-            <Link href='/about'>About</Link>
-          </Tab>
-          <Tab>
-            <Link href='/shop'>
-              <FiShoppingCart size={24} />
-            </Link>
-          </Tab>
-        </TabList>
-      </Tabs>
-    </div>
-  )
-}
+    <Flex className={navStyles.nav}>
+      <Link className={navStyles.navItem} href="/">
+        <Button variant="ghost">Home</Button>
+      </Link>
+      <CustomMenu title="Men" items={["Pants"]} />
+      <Link className={navStyles.navItem} href="/about">
+        <Button variant="ghost">About</Button>
+      </Link>
+      <Spacer />
+      <Link className={navStyles.navItem} href="/shop">
+        <Button variant="ghost" rightIcon={<FiShoppingCart />}>
+          Cart
+        </Button>
+      </Link>
+    </Flex>
+  );
+};
 
 export default Nav;
