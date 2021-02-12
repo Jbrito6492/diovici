@@ -1,16 +1,17 @@
-import { ON_DESKTOP } from "../actions";
+import { ON_MOBILE } from "../actions";
 
 const initialState = {
-  onDesktop: null,
-  loading: null,
+  onMobile: null,
+  loading: true,
 };
 
 const screenReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ON_DESKTOP:
+    case ON_MOBILE:
       return {
         ...state,
-        onDesktop: action.payload,
+        onMobile: action.payload,
+        loading: false,
       };
     default:
       return state;

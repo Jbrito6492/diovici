@@ -1,4 +1,4 @@
-import headerStyles from "../styles/Header.module.css";
+import headerStyles from '../styles/Header.module.css';
 
 const Header = () => {
   return (
@@ -6,9 +6,11 @@ const Header = () => {
       <h1 className={headerStyles.title}>
         <span>Diovici</span>
       </h1>
-      <p className={headerStyles.description}>Pants to fit your lifestyle</p>
+      <p className={headerStyles.description}>
+        Pants to fit your lifestyle
+      </p>
     </div>
-  );
-};
+  )
+}
 
 export default Header;

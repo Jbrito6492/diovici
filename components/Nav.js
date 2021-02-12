@@ -1,56 +1,43 @@
-import Link from "next/Link";
-import { Button, Flex, Spacer } from "@chakra-ui/react";
-import CustomMenu from "./CustomMenu";
-import { FiShoppingCart } from "react-icons/fi";
-import navStyles from "../styles/Nav.module.css";
-import { HStack } from "@chakra-ui/react";
+import Link from 'next/Link';
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import {
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuIcon,
+  MenuCommand,
+  MenuDivider,
+} from "@chakra-ui/react"
+import { FiShoppingCart } from 'react-icons/fi';
+import navStyles from '../styles/Nav.module.css';
 
 const Nav = () => {
   return (
-    <Flex className={navStyles.nav}>
-      <HStack>
-        <Link className={navStyles.navItem} href="/">
-          <Button
-            variant="ghost"
-            transition="all 0.2s"
-            _hover={{
-              bg: "#D7D7D7",
-              color: "black",
-            }}
-          >
-            Home
-          </Button>
-        </Link>
-        <CustomMenu title="Men" items={["Pants"]} />
-        <Link className={navStyles.navItem} href="/about">
-          <Button
-            variant="ghost"
-            transition="all 0.2s"
-            _hover={{
-              bg: "#D7D7D7",
-              color: "black",
-            }}
-          >
-            About
-          </Button>
-        </Link>
-      </HStack>
-      <Spacer />
-      <Link className={navStyles.navItem} href="/shop">
-        <Button
-          variant="ghost"
-          rightIcon={<FiShoppingCart />}
-          transition="all 0.2s"
-          _hover={{
-            bg: "#D7D7D7",
-            color: "black",
-          }}
-        >
-          Cart
-        </Button>
-      </Link>
-    </Flex>
-  );
-};
+    <div className={navStyles.nav}>
+      <Tabs variant="unstyled">
+        <TabList>
+          <Tab>
+            <Link href='/'>Home</Link>
+          </Tab>
+          <Tab>
+            <Link href='/shop'>Men</Link>
+          </Tab>
+          <Tab>
+            <Link href='/about'>About</Link>
+          </Tab>
+          <Tab>
+            <Link href='/shop'>
+              <FiShoppingCart size={24} />
+            </Link>
+          </Tab>
+        </TabList>
+      </Tabs>
+    </div>
+  )
+}
 
 export default Nav;

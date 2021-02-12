@@ -1,4 +1,5 @@
-export const ON_DESKTOP = 'on_desktop';
-export const isMoble = (boolean) => async (dispatch, getState, api) => {
-  dispatch({ type: ON_DESKTOP, payload: boolean });
+/* eslint-disable no-unused-vars */
+export const ON_MOBILE = "on_mobile";
+export const onMobile = (boolean) => async (dispatch, getState, api) => {
+  dispatch({ type: ON_MOBILE, payload: boolean });
 };
