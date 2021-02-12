@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import Submenu from "./Submenu.js";
 import { BiChevronDown } from "react-icons/bi";
-import menuStyles from "../styles/Menu.module.css";
+// import menuStyles from "../styles/Menu.module.css";
 
 const DesktopMenu = ({ title, items }) => {
   return (
@@ -27,7 +27,7 @@ const DesktopMenu = ({ title, items }) => {
           {title}
         </MenuButton>
         <Portal>
-          <MenuList bg="white">
+          <MenuList bg="black" color="white">
             {items.map((item, index) => (
               <MenuItem key={index} title={item} as={Submenu} />
             ))}
