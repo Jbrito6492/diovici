@@ -1,18 +1,20 @@
-import Header from './Header';
-import Nav from './Nav';
-import styles from '../styles/Layout.module.css';
+import Header from "./Header";
+import Banner from "./Banner";
+import DesktopNav from "./DesktopNav";
+import { useSelector } from "react-redux";
+import styles from "../styles/Layout.module.css";
 
 const Layout = ({ children }) => {
+  const { onMobile } = useSelector((state) => state.screen);
   return (
     <>
-      <Nav />
+      <Banner />
+      {onMobile ? null : <DesktopNav />}
       <div className={styles.container}>
         <Header />
-        <main className={styles.main}>
-          {children}
-        </main>
+        <main className={styles.main}>{children}</main>
       </div>
     </>
-  )
-}
+  );
+};
 export default Layout;
