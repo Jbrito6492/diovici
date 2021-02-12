@@ -1,7 +1,10 @@
-.menu {
-  background: #000;
-  color: #fff;
+.row {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.img {
+  width: calc((50vh+50vw)/2);
+  margin: calc((5vh+5vw)/2);
 }
