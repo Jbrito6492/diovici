@@ -47,7 +47,7 @@ const Submenu = forwardRef((props, ref) => {
 
   const fadeInAnimation = prefersReducedMotion
     ? undefined
-    : `${fadeIn} 1s linear normal forwards`;
+    : `${fadeIn} .5s linear normal forwards`;
   const fadeOutAnimation = prefersReducedMotion
     ? undefined
     : `${fadeOut} .2s linear normal forwards`;
