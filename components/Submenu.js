@@ -3,7 +3,7 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
+  HStack,
   Img,
   Portal,
   forwardRef,
@@ -11,7 +11,9 @@ import {
   keyframes,
   usePrefersReducedMotion,
   Text,
+  VStack,
 } from "@chakra-ui/react";
+import submenuStyles from "../styles/Submenu.module.css";
 import { GrNext } from "react-icons/gr";
 
 const Submenu = forwardRef((props, ref) => {
@@ -33,11 +35,6 @@ const Submenu = forwardRef((props, ref) => {
     }, 500);
   };
 
-  const slide = keyframes`
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0%); }
-  `;
-
   const fadeIn = keyframes`
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -48,9 +45,6 @@ const Submenu = forwardRef((props, ref) => {
   100% { opacity: 0; }
   `;
 
-  const slideAnimation = prefersReducedMotion
-    ? undefined
-    : `${slide} .2s linear normal forwards`;
   const fadeInAnimation = prefersReducedMotion
     ? undefined
     : `${fadeIn} 1s linear normal forwards`;
@@ -74,14 +68,20 @@ const Submenu = forwardRef((props, ref) => {
         <Portal>
           {state.showItem && (
             <MenuList animation={state.animation}>
-              <MenuItem bg="white" animation={slideAnimation}>
+              <HStack>
                 <Img
                   objectFit="contain"
-                  boxSize="350px"
+                  boxSize="25rem"
                   src={`${props.title.toLowerCase()}menu.png`}
                   alt={`${props.title} model`}
                 />
-              </MenuItem>
+                <VStack className={submenuStyles.description}>
+                  <Text fontSize="sm">
+                    Pants that make you feel fresh, no matter the occasion.
+                  </Text>
+                  <Button>shop now</Button>
+                </VStack>
+              </HStack>
             </MenuList>
           )}
         </Portal>

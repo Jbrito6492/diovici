@@ -1,15 +1,17 @@
-import Head from 'next/head';
+import Head from "next/head";
+import ImageGallery from "../components/ImageGallery.js";
 
 export default function Home() {
   return (
     <div>
       <Head>
         <title>Diovici</title>
-        <meta name="keywords" content="e-commerce, pants, pantalones, fashion, lifting, fitness" />
+        <meta
+          name="keywords"
+          content="e-commerce, pants, pantalones, fashion, lifting, fitness"
+        />
       </Head>
-      <h1>Welcome to Next</h1>
+      <ImageGallery />
     </div>
-  )
+  );
 }
-
-

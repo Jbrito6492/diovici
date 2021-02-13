@@ -1,16 +1,18 @@
-import headerStyles from '../styles/Header.module.css';
+import { Img, Fade, useDisclosure } from "@chakra-ui/react";
+import headerStyles from "../styles/Header.module.css";
 
 const Header = () => {
+  const { onOpen } = useDisclosure();
   return (
     <div>
-      <h1 className={headerStyles.title}>
-        <span>Diovici</span>
-      </h1>
-      <p className={headerStyles.description}>
-        Pants to fit your lifestyle
-      </p>
+      <Fade in={onOpen}>
+        <h1 className={headerStyles.title}>
+          <Img src="logo.png" alt="Diovici Logo" />
+        </h1>
+        <p className={headerStyles.description}>Pants to fit your lifestyle</p>
+      </Fade>
     </div>
-  )
-}
+  );
+};
 
 export default Header;
