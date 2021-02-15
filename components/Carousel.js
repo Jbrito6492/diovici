@@ -1,41 +1,43 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import carouselStyles from "../styles/Carousel.module.css";
+import galleryStyles from "../styles/Gallery.module.css";
+import { Img, Box } from "@chakra-ui/react";
 
-const Carousel = () => {
+const Carousel = ({ src, animation, idx }) => {
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 2,
   };
 
   return (
-    <div className={carouselStyles.container}>
-      <h2> Single Item</h2>
+    <Box animation={animation}>
       <Slider {...settings}>
-        <div>
-          <h1>1</h1>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {items.map((item, index) => (
+          <Img
+            key={index}
+            animation={animation}
+            src={src}
+            className={`${galleryStyles.item} ${galleryStyles.img}${index + 1}`}
+          />
+        ))}
       </Slider>
-    </div>
+      {idx === 1 ? (
+        <Img
+          animation={animation}
+          src="galleryimg5.jpg"
+          className={`${galleryStyles.item} ${galleryStyles.img5}`}
+        />
+      ) : (
+          <Img
+            animation={animation}
+            src="galleryimg6.jpg"
+            className={`${galleryStyles.item} ${galleryStyles.img6}`}
+          />
+        )}
+    </Box>
   );
 };
 
