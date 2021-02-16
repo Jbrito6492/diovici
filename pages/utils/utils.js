@@ -1,5 +1,6 @@
 import $ from "jquery";
 
+// gets dimensions of user device
 export const getWindowDimensions = async (callback) => {
   try {
     const width = await $(window).width();
