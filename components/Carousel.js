@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Img } from "@chakra-ui/react";
 import styles from "../styles/Carousel.module.css";
+import PropTypes from "prop-types";
 
 const Carousel = ({ slides, boxSize, interval }) => {
   const [current, setCurrent] = useState(0);
@@ -38,6 +39,12 @@ const Carousel = ({ slides, boxSize, interval }) => {
   };
 
   return <section className={styles.slider}>{items}</section>;
+};
+
+Carousel.propTypes = {
+  slides: PropTypes.array,
+  boxSize: PropTypes.string,
+  interval: PropTypes.number,
 };
 
 export default Carousel;

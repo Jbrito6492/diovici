@@ -37,14 +37,13 @@ const Header = () => {
             interval={4000}
           />
           <p className={`${headerStyles.description} ${headerStyles.grow}`}>
-            Pants to fit your lifestyle
+            Pants to Fit Your Lifestyle
           </p>
           <Carousel
             slides={["galleryimg3.jpg", "galleryimg8.jpg"]}
             boxSize="15rem"
             interval={4000}
           />
-
         </div>
       </Fade>
     </div>

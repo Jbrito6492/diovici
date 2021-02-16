@@ -8,22 +8,22 @@ import {
 } from "@chakra-ui/react";
 import Submenu from "./Submenu.js";
 import { BiChevronDown } from "react-icons/bi";
-// import menuStyles from "../styles/Menu.module.css";
+import PropTypes from "prop-types";
 
 const DesktopMenu = ({ title, items }) => {
+  const options = {
+    transition: "all 0.2s",
+    _hover: {
+      bg: "#D7D7D7",
+      color: "black",
+    },
+    variant: "ghost",
+  };
+
   return (
     <>
       <Menu>
-        <MenuButton
-          as={Button}
-          rightIcon={<BiChevronDown />}
-          transition="all 0.2s"
-          _hover={{
-            bg: "#D7D7D7",
-            color: "black",
-          }}
-          variant="ghost"
-        >
+        <MenuButton as={Button} {...options} rightIcon={<BiChevronDown />}>
           {title}
         </MenuButton>
         <Portal>
@@ -36,6 +36,11 @@ const DesktopMenu = ({ title, items }) => {
       </Menu>
     </>
   );
+};
+
+DesktopMenu.propTypes = {
+  title: PropTypes.string,
+  items: PropTypes.array,
 };
 
 export default DesktopMenu;

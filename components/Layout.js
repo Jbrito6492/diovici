@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import DesktopNav from "./DesktopNav";
 import { useSelector } from "react-redux";
 import styles from "../styles/Layout.module.css";
+import PropTypes from "prop-types";
 
 const Layout = ({ children }) => {
   const { onMobile } = useSelector((state) => state.screen);
@@ -19,4 +20,12 @@ const Layout = ({ children }) => {
     </>
   );
 };
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
+
 export default Layout;

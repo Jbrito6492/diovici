@@ -24,6 +24,15 @@ const Submenu = forwardRef((props, ref) => {
     animation: null,
   });
 
+  const options = {
+    variant: "ghost",
+    transition: "all 0.2s",
+    _hover: {
+      bg: "#D7D7D7",
+      color: "black",
+    },
+  };
+
   const showItem = () => {
     setState({ ...state, showItem: true, animation: fadeInAnimation });
   };
@@ -59,8 +68,10 @@ const Submenu = forwardRef((props, ref) => {
           as={Button}
           ref={ref}
           {...props}
+          {...options}
           rightIcon={<GrNext color="black" />}
           transition="all 0.2s"
+          onClick={showItem}
           onMouseEnter={showItem}
         >
           {props.title}

@@ -8,46 +8,29 @@ import { useSelector } from "react-redux";
 
 const DesktopNav = () => {
   const { articles } = useSelector((state) => state.articles);
+  const options = {
+    variant: "ghost",
+    transition: "all 0.2s",
+    _hover: {
+      bg: "#D7D7D7",
+      color: "black",
+    },
+  };
+
   return (
     <Flex className={navStyles.nav}>
       <HStack>
         <Link className={navStyles.navItem} href="/">
-          <Button
-            variant="ghost"
-            transition="all 0.2s"
-            _hover={{
-              bg: "#D7D7D7",
-              color: "black",
-            }}
-          >
-            Home
-          </Button>
+          <Button {...options}>Home</Button>
         </Link>
         <DesktopMenu title="Men" items={articles} />
         <Link className={navStyles.navItem} href="/about">
-          <Button
-            variant="ghost"
-            transition="all 0.2s"
-            _hover={{
-              bg: "#D7D7D7",
-              color: "black",
-            }}
-          >
-            About
-          </Button>
+          <Button {...options}>About</Button>
         </Link>
       </HStack>
       <Spacer />
       <Link className={navStyles.navItem} href="/shop">
-        <Button
-          variant="ghost"
-          rightIcon={<FiShoppingCart />}
-          transition="all 0.2s"
-          _hover={{
-            bg: "#D7D7D7",
-            color: "black",
-          }}
-        >
+        <Button {...options} rightIcon={<FiShoppingCart />}>
           Cart
         </Button>
       </Link>

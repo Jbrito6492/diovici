@@ -7,6 +7,7 @@ import { onMobile } from "../store/actions";
 import { getWindowDimensions } from "./utils/utils.js";
 import store from "../store";
 import "../styles/globals.css";
+import PropTypes from "prop-types";
 
 function MyApp({ Component, pageProps }) {
   const dispatch = useDispatch();
@@ -43,5 +44,10 @@ function MyApp({ Component, pageProps }) {
 
 const makestore = () => store;
 const wrapper = createWrapper(makestore);
+
+MyApp.propTypes = {
+  Component: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+  pageProps: PropTypes.object,
+};
 
 export default wrapper.withRedux(MyApp);
