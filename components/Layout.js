@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <Banner />
       {onMobile ? null : <DesktopNav />}
       <div className={styles.container}>
-        <Header />
+        {onMobile ? null : <Header />}
         <main className={styles.main}>{children}</main>
         <Footer />
       </div>

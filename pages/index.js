@@ -1,5 +1,4 @@
 import Head from "next/head";
-import ImageGallery from "../components/ImageGallery.js";
 import { useSelector } from "react-redux";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
           content="e-commerce, pants, pantalones, fashion, lifting, fitness"
         />
       </Head>
-      {onMobile ? null : <ImageGallery />}
+      {onMobile ? null : null}
     </div>
   );
 }

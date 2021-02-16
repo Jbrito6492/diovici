@@ -1,32 +1,51 @@
-import {
-  Img,
-  Fade,
-  useDisclosure,
-  keyframes,
-  usePrefersReducedMotion,
-} from "@chakra-ui/react";
+import { Img, Fade, useDisclosure } from "@chakra-ui/react";
+import Carousel from "./Carousel";
 import headerStyles from "../styles/Header.module.css";
 
 const Header = () => {
   const { onOpen } = useDisclosure();
-  const prefersReducedMotion = usePrefersReducedMotion();
-
-  const shrink = keyframes`
-  from { transform: scale(1); }
-  to { transform: scale(.5); }
-  `;
-
-  const animation = prefersReducedMotion
-    ? undefined
-    : `${shrink} 1.5s linear normal forwards`;
 
   return (
     <div>
       <Fade in={onOpen}>
-        <div className={headerStyles.title}>
-          <Img src="logo.png" alt="Diovici Logo" animation={animation} />
+        <div className={headerStyles.titleContainer}>
+          <Carousel
+            slides={["galleryimg1.jpg", "galleryimg5.jpg"]}
+            boxSize="20rem"
+            interval={5000}
+          />
+          <div className={headerStyles.title}>
+            <Img
+              borderRadius="xl"
+              src="logo.png"
+              objectFit="scale-down"
+              boxSize="35rem"
+              alt="Diovici Logo"
+              className={headerStyles.grow}
+            />
+          </div>
+          <Carousel
+            slides={["galleryimg4.jpg", "galleryimg6.jpg"]}
+            boxSize="20rem"
+            interval={5000}
+          />
         </div>
-        <p className={headerStyles.description}>Pants to fit your lifestyle</p>
+        <div className={headerStyles.subtitleContainer}>
+          <Carousel
+            slides={["galleryimg2.jpg", "galleryimg7.jpg"]}
+            boxSize="15rem"
+            interval={4000}
+          />
+          <p className={`${headerStyles.description} ${headerStyles.grow}`}>
+            Pants to fit your lifestyle
+          </p>
+          <Carousel
+            slides={["galleryimg3.jpg", "galleryimg8.jpg"]}
+            boxSize="15rem"
+            interval={4000}
+          />
+
+        </div>
       </Fade>
     </div>
   );

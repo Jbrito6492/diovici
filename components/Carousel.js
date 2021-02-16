@@ -1,44 +1,43 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import galleryStyles from "../styles/Gallery.module.css";
-import { Img, Box } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Img } from "@chakra-ui/react";
+import styles from "../styles/Carousel.module.css";
 
-const Carousel = ({ src, animation, idx }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
+const Carousel = ({ slides, boxSize, interval }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const items = slides.map((src, index) => (
+    <div
+      key={index}
+      className={
+        index === current
+          ? `${styles.slide} ${styles.active}`
+          : `${styles.slide}`
+      }
+    >
+      {index === current && (
+        <Img
+          src={src}
+          borderRadius="10px"
+          boxSize={boxSize}
+          objectFit="scale-down"
+          className={styles.image}
+        />
+      )}
+    </div>
+  ));
+
+  useEffect(() => {
+    setTimeout(() => {
+      nextSlide();
+    }, interval);
+  }, [current]);
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
-  return (
-    <Box animation={animation}>
-      <Slider {...settings}>
-        {items.map((item, index) => (
-          <Img
-            key={index}
-            animation={animation}
-            src={src}
-            className={`${galleryStyles.item} ${galleryStyles.img}${index + 1}`}
-          />
-        ))}
-      </Slider>
-      {idx === 1 ? (
-        <Img
-          animation={animation}
-          src="galleryimg5.jpg"
-          className={`${galleryStyles.item} ${galleryStyles.img5}`}
-        />
-      ) : (
-          <Img
-            animation={animation}
-            src="galleryimg6.jpg"
-            className={`${galleryStyles.item} ${galleryStyles.img6}`}
-          />
-        )}
-    </Box>
-  );
+  return <section className={styles.slider}>{items}</section>;
 };
 
 export default Carousel;

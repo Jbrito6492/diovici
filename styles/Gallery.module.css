@@ -1,106 +1,28 @@
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-gap: 1rem;
-  grid-template-areas: 'img1 img2 img3 img3' 'img1 img4 img4 img3' 'img7 img7 img8 img3';
-  height: 40vh;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.item {
-  width: 100%;
-  height: 35rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img1 {
-  grid-area: img1;
-  min-height: 51.5rem;
-}
-
-.img2 {
-  grid-area: img2;
-}
-
-.img3 {
-  grid-area: img3;
-}
-
-.img4 {
-  grid-area: img4;
-}
-
-.img5 {
-  grid-area: img5;
-}
-
-.img6 {
-  grid-area: img6;
-  min-height: 51.5rem;
-}
-
-.img7 {
-  grid-area: img7;
-}
-
-.img8 {
-  grid-area: img8;
-}
-
 @keyframes move {
-  0% {
-    bottom: 0;
-  }
-  100% {
-    bottom: 200px;
-  }
-}
-
-.move .item {
-  animation-name: move;
-  position: relative;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-  position: relative;
-  left: 0;
-  right: 0;
-}
-
-@keyframes fade {
   0% {
     opacity: 0;
   }
   11.11% {
-    opacity: 1;
+    opacity: 0.25;
+    left: 15px;
   }
   33.33% {
-    opacity: 1;
+    opacity: 0.5;
+    left: 50px;
   }
   44.44% {
-    opacity: 0;
+    opacity: 0.75;
+    left: 75px;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
+    left: 100px
   }
 }
 
-.fadein .item {
-  opacity: 0;
-  animation-name: fade;
-  animation-duration: 24s;
-  animation-iteration-count: infinite;
+.item {
+  animation-name: move;
+  animation-duration: 2s;
   position: absolute;
   left: 0;
   right: 0;
