@@ -16,8 +16,35 @@
   border-radius: 10px;
 }
 
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  11.11% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  33.33% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  44.44% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
 .slide.active {
-  opacity: 1;
-  transition-duration: 1s;
-  transform: scale(1.08);
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  position: relative;
+  left: 0;
+  right: 0;
 }
