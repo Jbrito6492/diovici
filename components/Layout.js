@@ -1,4 +1,3 @@
-import Header from "./Header";
 import Banner from "./Banner";
 import Footer from "./Footer";
 import DesktopNav from "./DesktopNav";
@@ -13,7 +12,6 @@ const Layout = ({ children }) => {
       <Banner />
       {onMobile ? null : <DesktopNav />}
       <div className={styles.container}>
-        {onMobile ? null : <Header />}
         <main className={styles.main}>{children}</main>
         <Footer />
       </div>

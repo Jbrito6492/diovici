@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/Link";
 import {
   Menu,
   MenuButton,
@@ -90,7 +91,7 @@ const Submenu = forwardRef((props, ref) => {
                   <Text fontSize="sm">
                     Pants that make you feel fresh, no matter the occasion.
                   </Text>
-                  <Button>shop now</Button>
+                  <Link href="/shop"><Button>shop now</Button></Link>
                 </VStack>
               </HStack>
             </MenuList>

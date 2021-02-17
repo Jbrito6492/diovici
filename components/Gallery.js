@@ -2,22 +2,22 @@ import { Img, Fade, useDisclosure } from "@chakra-ui/react";
 import Carousel from "./Carousel";
 import headerStyles from "../styles/Header.module.css";
 
-const Header = () => {
+const Gallery = () => {
   const { onOpen } = useDisclosure();
-
+  const baseRoute = "/static/images";
   return (
     <div>
       <Fade in={onOpen}>
         <div className={headerStyles.titleContainer}>
           <Carousel
-            slides={["galleryimg1.jpg", "galleryimg5.jpg"]}
+            slides={[`${baseRoute}/galleryimg1.jpg`, `${baseRoute}/galleryimg5.jpg`]}
             boxSize="20rem"
             interval={5000}
           />
           <div className={headerStyles.title}>
             <Img
               borderRadius="xl"
-              src="logo.png"
+              src={`${baseRoute}/logo.png`}
               objectFit="scale-down"
               boxSize="35rem"
               alt="Diovici Logo"
@@ -25,14 +25,14 @@ const Header = () => {
             />
           </div>
           <Carousel
-            slides={["galleryimg4.jpg", "galleryimg6.jpg"]}
+            slides={[`${baseRoute}/galleryimg4.jpg`, `${baseRoute}/galleryimg6.jpg`]}
             boxSize="20rem"
             interval={5000}
           />
         </div>
         <div className={headerStyles.subtitleContainer}>
           <Carousel
-            slides={["galleryimg2.jpg", "galleryimg7.jpg"]}
+            slides={[`${baseRoute}/galleryimg2.jpg`, `${baseRoute}/galleryimg7.jpg`]}
             boxSize="15rem"
             interval={4000}
           />
@@ -40,7 +40,7 @@ const Header = () => {
             Pants to Fit Your Lifestyle
           </p>
           <Carousel
-            slides={["galleryimg3.jpg", "galleryimg8.jpg"]}
+            slides={[`${baseRoute}/galleryimg3.jpg`, `${baseRoute}/galleryimg8.jpg`]}
             boxSize="15rem"
             interval={4000}
           />
@@ -50,4 +50,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Gallery;
