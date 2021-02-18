@@ -84,14 +84,14 @@ const Submenu = forwardRef((props, ref) => {
                 <Img
                   objectFit="contain"
                   boxSize="25rem"
-                  src={`${props.title.toLowerCase()}menu.png`}
+                  src={`static/images/${props.title.toLowerCase()}menu.png`}
                   alt={`${props.title} model`}
                 />
                 <VStack className={submenuStyles.description}>
                   <Text fontSize="sm">
                     Pants that make you feel fresh, no matter the occasion.
                   </Text>
-                  <Link href="/shop"><Button>shop now</Button></Link>
+                  <Link href="/shop"><Button onClick={hideItem}>shop now</Button></Link>
                 </VStack>
               </HStack>
             </MenuList>

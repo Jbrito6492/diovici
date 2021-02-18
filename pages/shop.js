@@ -1,4 +1,5 @@
 import Head from "next/head";
+import ShopGallery from "../components/ShopGallery";
 
 const shop = () => {
   return (
@@ -7,6 +8,7 @@ const shop = () => {
         <title>Shop</title>
       </Head>
       <h1>Shop</h1>
+      <ShopGallery />
     </div>
   );
 };

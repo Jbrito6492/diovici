@@ -1,0 +1,44 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-template-areas: "img1 img0 img0" "img2 img0 img0" "img3 img4 img5";
+}
+
+.img0 {
+  grid-area: img0;
+  padding-left: 10px;
+}
+
+.img1 {
+  grid-area: img1;
+}
+
+.img2 {
+  grid-area: img2;
+}
+
+.img3 {
+  grid-area: img3;
+}
+
+.img4 {
+  grid-area: img4;
+}
+
+.img5 {
+  grid-area: img5;
+}
+
+.rightArrow {
+  position: absolute;
+  top: 50%;
+  right: 200px;
+}
+
+.leftArrow {
+  position: absolute;
+  top: 50%;
+  left: 200px;
+}
