@@ -6,6 +6,7 @@ const Banner = () => {
     <Stack direction="row" className={bannerStyles.banner} bg="black">
       {[...Array(6)].map((image, index) => (
         <Img
+          key={index}
           className={bannerStyles.logo}
           boxSize="3rem"
           objectFit="contain"

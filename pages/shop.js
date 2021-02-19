@@ -1,5 +1,7 @@
 import Head from "next/head";
 import ShopGallery from "../components/ShopGallery";
+import Checkout from "../components/Checkout";
+import styles from "../styles/Shop.module.css";
 
 const shop = () => {
   return (
@@ -7,8 +9,10 @@ const shop = () => {
       <Head>
         <title>Shop</title>
       </Head>
-      <h1>Shop</h1>
-      <ShopGallery />
+      <div className={styles.pageContainer}>
+        <ShopGallery />
+        <Checkout />
+      </div>
     </div>
   );
 };

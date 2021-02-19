@@ -1,0 +1,9 @@
+.reviews {
+  display: flex;
+  align-items: center;
+}
+
+.numberInput {
+  text-align: center;
+  width: auto;
+}

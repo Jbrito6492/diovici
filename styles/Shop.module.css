@@ -1,3 +1,8 @@
+.pageContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -8,7 +13,7 @@
 
 .img0 {
   grid-area: img0;
-  padding-left: 10px;
+  /* padding-left: 5px; */
 }
 
 .img1 {
