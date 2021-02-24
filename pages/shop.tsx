@@ -3,7 +3,7 @@ import ShopGallery from "../components/ShopGallery";
 import Checkout from "../components/Checkout";
 import styles from "../styles/Shop.module.css";
 
-const shop = () => {
+export default function Shop() {
   return (
     <div>
       <Head>
@@ -15,6 +15,4 @@ const shop = () => {
       </div>
     </div>
   );
-};
-
-export default shop;
+}

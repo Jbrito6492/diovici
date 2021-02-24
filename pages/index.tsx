@@ -2,9 +2,8 @@ import Head from "next/head";
 import Gallery from "../components/Gallery";
 import { useSelector } from "react-redux";
 
-export default function Home() {
+export default function Index() {
   const { onMobile } = useSelector((state) => state.screen);
-
   return (
     <div>
       <Head>

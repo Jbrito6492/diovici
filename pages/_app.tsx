@@ -8,9 +8,11 @@ import { getWindowDimensions } from "./utils/utils.js";
 import store from "../store";
 import "../styles/globals.css";
 import PropTypes from "prop-types";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp(props: AppProps) {
   const dispatch = useDispatch();
+  const { Component, pageProps } = props;
 
   useEffect(() => {
     getWindowDimensions((result) => {
