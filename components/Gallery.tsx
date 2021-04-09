@@ -1,8 +1,9 @@
 import { Img, Fade, useDisclosure } from "@chakra-ui/react";
 import Carousel from "./Carousel";
 import headerStyles from "../styles/Header.module.css";
+import React from "react";
 
-const Gallery = () => {
+export default function Gallery(): React.ReactNode {
   const { onOpen } = useDisclosure();
   const baseRoute = "/static/images";
   return (
@@ -10,7 +11,10 @@ const Gallery = () => {
       <Fade in={onOpen}>
         <div className={headerStyles.titleContainer}>
           <Carousel
-            slides={[`${baseRoute}/galleryimg1.jpg`, `${baseRoute}/galleryimg5.jpg`]}
+            slides={[
+              `${baseRoute}/galleryimg1.jpg`,
+              `${baseRoute}/galleryimg5.jpg`,
+            ]}
             boxSize="20rem"
             interval={5000}
           />
@@ -25,14 +29,20 @@ const Gallery = () => {
             />
           </div>
           <Carousel
-            slides={[`${baseRoute}/galleryimg4.jpg`, `${baseRoute}/galleryimg6.jpg`]}
+            slides={[
+              `${baseRoute}/galleryimg4.jpg`,
+              `${baseRoute}/galleryimg6.jpg`,
+            ]}
             boxSize="20rem"
             interval={5000}
           />
         </div>
         <div className={headerStyles.subtitleContainer}>
           <Carousel
-            slides={[`${baseRoute}/galleryimg2.jpg`, `${baseRoute}/galleryimg7.jpg`]}
+            slides={[
+              `${baseRoute}/galleryimg2.jpg`,
+              `${baseRoute}/galleryimg7.jpg`,
+            ]}
             boxSize="15rem"
             interval={4000}
           />
@@ -40,7 +50,10 @@ const Gallery = () => {
             Pants to Fit Your Lifestyle
           </p>
           <Carousel
-            slides={[`${baseRoute}/galleryimg3.jpg`, `${baseRoute}/galleryimg8.jpg`]}
+            slides={[
+              `${baseRoute}/galleryimg3.jpg`,
+              `${baseRoute}/galleryimg8.jpg`,
+            ]}
             boxSize="15rem"
             interval={4000}
           />
@@ -48,6 +61,4 @@ const Gallery = () => {
       </Fade>
     </div>
   );
-};
-
-export default Gallery;
+}

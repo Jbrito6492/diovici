@@ -1,16 +1,16 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { Provider, useDispatch } from "react-redux";
 import { createWrapper } from "next-redux-wrapper";
 import { ChakraProvider } from "@chakra-ui/react";
 import { onMobile } from "../store/actions";
-import { getWindowDimensions } from "./utils/utils.js";
+import { getWindowDimensions } from "./utils/utils.ts";
 import store from "../store";
 import "../styles/globals.css";
 import PropTypes from "prop-types";
 import { AppProps } from "next/app";
 
-function MyApp(props: AppProps) {
+function MyApp(props: AppProps): React.ReactNode {
   const dispatch = useDispatch();
   const { Component, pageProps } = props;
 

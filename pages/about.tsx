@@ -1,6 +1,7 @@
 import Head from "next/head";
+import React from "react";
 
-export default function About() {
+export default function About(): React.ReactNode {
   return (
     <div>
       <Head>
