@@ -1,10 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { ShopData } from "./ShopData";
 import { Img } from "@chakra-ui/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "../styles/Shop.module.css";
 
-export default function ShopGallery() {
+export default function ShopGallery(): React.ReactNode {
   const [current, setCurrent] = useState(0);
   const length = ShopData.length;
 

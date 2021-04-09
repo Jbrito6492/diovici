@@ -6,7 +6,7 @@ import {
   Button,
   Portal,
 } from "@chakra-ui/react";
-import Submenu from "./Submenu.js";
+import Submenu from "./submenu/Submenu.tsx";
 import { BiChevronDown } from "react-icons/bi";
 import PropTypes from "prop-types";
 
