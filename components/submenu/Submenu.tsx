@@ -15,6 +15,15 @@ import {
 import submenuStyles from "../../styles/Submenu.module.css";
 import { GrNext } from "react-icons/gr";
 
+interface options {
+  variant: string;
+  transition: string;
+  _hover: {
+    bg: string;
+    color: string;
+  };
+}
+
 const Submenu = forwardRef((props, ref) => {
   const options = {
     variant: "ghost",
