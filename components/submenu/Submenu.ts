@@ -3,7 +3,11 @@ import { usePrefersReducedMotion, keyframes } from "@chakra-ui/react";
 
 export default function Submenu() {
   const prefersReducedMotion = usePrefersReducedMotion();
-  const [state, setState] = useState({
+  const [state, setState] = useState<{
+    showItem: boolean;
+    expandedMenu: boolean;
+    animation: string | undefined;
+  }>({
     showItem: false,
     expandedMenu: false,
     animation: null,
